@@ -1,0 +1,1 @@
+bookName:c++  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:jhfbpi  |  bookPrice:52.3
