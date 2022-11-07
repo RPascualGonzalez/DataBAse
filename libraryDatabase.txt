@@ -1,1 +1,16 @@
-bookName:c++  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:jhfbpi  |  bookPrice:52.3
+bookName:c++   |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:1jhfbpi  |  bookPrice:52.3
+bookName:c++2  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:2jhfbpi  |  bookPrice:52.3
+bookName:c++3  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:3jhfbpi  |  bookPrice:52.3
+bookName:c++4  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:4jhfbpi  |  bookPrice:52.3
+bookName:c++5  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:5jhfbpi  |  bookPrice:52.3
+bookName:c++6  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:6jhfbpi  |  bookPrice:52.3
+bookName:c++7  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:7jhfbpi  |  bookPrice:52.3
+bookName:c++8  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:8jhfbpi  |  bookPrice:52.3
+bookName:c++9  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:9jhfbpi  |  bookPrice:52.3bookName:c++2  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:2jhfbpi  |  bookPrice:52.3dddd
+bookName:c++3  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:3jhfbpi  |  bookPrice:52.3dddd
+bookName:c++4  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:4jhfbpi  |  bookPrice:52.3dddd
+bookName:c++5  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:5jhfbpi  |  bookPrice:52.3dddd
+bookName:c++6  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:6jhfbpi  |  bookPrice:52.3dddd
+bookName:c++7  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:7jhfbpi  |  bookPrice:52.3dddd
+bookName:c++8  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:8jhfbpi  |  bookPrice:52.3dddd
+bookName:c++9  |  bookAutor:quevedio  |  bookEditorial:edito  |  bookIsbn:9jhfbpi  |  bookPrice:52.3dddd

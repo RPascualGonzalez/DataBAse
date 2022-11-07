@@ -12,11 +12,17 @@ bool AddingMoreBooks();
 
 int main()
 {
-    ofstream databaseFile("libraryDatabase.txt");
+    ofstream databaseFileOut ("libraryDatabase.txt", ios_base::out | ios_base::app);
+    if (!databaseFileOut)
+    {
+        cout << "Error open libraryDatabase.txt\n";
+    }
+    ifstream databaseFileIn("libraryDatabase.txt");
     LibraryDatabase Database;
     while (AddingMoreBooks()) {
-        Database.InsertValueDataBase(databaseFile);
-    }  
+        //Database.InsertValueDataBase(databaseFileOut);
+        Database.DeleteValueDataBase(databaseFileIn, "1jhfbpi");
+    } 
 }
 
 // ----------------------------------------
