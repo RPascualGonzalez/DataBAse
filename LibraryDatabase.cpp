@@ -7,39 +7,54 @@ namespace NSP_LibraryDatabase {
 	LibraryDatabase::LibraryDatabase() {}
 
 	// ----------------------------------------
-	void LibraryDatabase::InsertValueDataBase(ofstream& file)
+	void LibraryDatabase::InsertBookDataBase()
 	// ----------------------------------------
 	{
+		ofstream databaseFileOut("libraryDatabase.txt", ios_base::out | ios_base::app);
+		cin.ignore();
 		cout << " Write the Book Name: ";
-		cin >> bookName;
+		getline(cin, bookName);
 		cout << " Write the Book Autor: ";
-		cin >> bookAutor;
+		getline(cin, bookAutor);
 		cout << " Write the Book Editorial: ";
-		cin >> bookEditorial;
+		getline(cin, bookEditorial);
 		cout << " Write the Book ISBN: ";
-		cin >> bookIsbn;
+		getline(cin, bookIsbn);
 		cout << " Write the Book Price: ";
 		cin >> bookPrice;
-		file << "bookName: " << bookName << "  |  bookAutor: " << bookAutor << "  |  bookEditorial: " << bookEditorial
+		databaseFileOut << "\n bookName: " << bookName << "  |  bookAutor: " << bookAutor << "  |  bookEditorial: " << bookEditorial
 			 << "  |  bookIsbn: " << bookIsbn << "  |  bookPrice: " << bookPrice;
 	}
 
 	// ----------------------------------------
-	void LibraryDatabase::DeleteValueDataBase(ifstream& file, string isbnSearched)
+	void LibraryDatabase::DeleteBookDataBase()
 	// ----------------------------------------
 	{
 		// is not posible delete one row is needed to copy all the values in a vector, remove the file and printed in a new file;
-		string row;
-		while (getline(file, row))
+
+		ifstream databaseFileIn("libraryDatabase.txt");
+		if (!databaseFileIn)
 		{
-			if (not IsIsbnFoundedInThisRow(row, isbnSearched))
+			cout << "Error open libraryDatabase.txt\n";
+		}
+		string row;
+		string isbnSearched;
+		cout << "insert the book ISBN to print: \n";
+		cin >> isbnSearched;
+		while (getline(databaseFileIn, row))
+		{
+			if ( not IsIsbnFoundedInThisRow(row, isbnSearched))
 			{
 				fileCopied.push_back(row);
 			}
 		}
-		file.close();
-		remove("libraryDatabase.txt");	
-		CreateAndFillFileOldValues();
+		databaseFileIn.close();
+		ofstream databaseFileOut("libraryDatabase.txt");
+
+		for (string row : fileCopied) {
+			databaseFileOut << row << "\n";
+		}
+
 	}
 
 	// ----------------------------------------
@@ -62,12 +77,39 @@ namespace NSP_LibraryDatabase {
 		if (found != string::npos) result = true;
 		return result;
 	}
+
 	// ----------------------------------------
-	void LibraryDatabase::PrintValueDataBase(ifstream& file)
+	void LibraryDatabase::PrintOneBookDataBase()
+		// ----------------------------------------
+	{
+		ifstream databaseFileOut("libraryDatabase.txt");
+		if (!databaseFileOut)
+		{
+			cout << "Error open libraryDatabase.txt\n";
+		}
+		string row;
+		string isbnSearched;
+		cout << "insert the book ISBN to print: \n";
+		cin >> isbnSearched;
+		while (getline(databaseFileOut, row))
+		{
+			if (IsIsbnFoundedInThisRow(row, isbnSearched))
+			{
+				cout << row;
+			}
+		}
+	}
+	// ----------------------------------------
+	void LibraryDatabase::PrintValuesDataBase()
 	// ----------------------------------------
 	{
+		ifstream databaseFileOut("libraryDatabase.txt");
+		if (!databaseFileOut)
+		{
+			cout << "Error open libraryDatabase.txt\n";
+		}
 		string row;
-		while (getline(file, row))
+		while (getline(databaseFileOut, row))
 		{
 			cout << row << "\n";
 		}

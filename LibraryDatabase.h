@@ -7,9 +7,10 @@ namespace NSP_LibraryDatabase {
 	{
 	public:
 		LibraryDatabase();
-		void InsertValueDataBase(std::ofstream& file);
-		void DeleteValueDataBase(std::ifstream& file, std::string isbnSearched);
-		void PrintValueDataBase(std::ifstream& file);
+		void InsertBookDataBase();
+		void DeleteBookDataBase();
+		void PrintValuesDataBase();
+		void PrintOneBookDataBase();
 		void CreateAndFillFileOldValues();
 		
 	private:

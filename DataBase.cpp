@@ -8,35 +8,36 @@
 using namespace std;
 using namespace NSP_LibraryDatabase;
 
-bool AddingMoreBooks();
-
+void InitialMenu();
+int action = 0;
 int main()
 {
-    ofstream databaseFileOut ("libraryDatabase.txt", ios_base::out | ios_base::app);
-    if (!databaseFileOut)
-    {
-        cout << "Error open libraryDatabase.txt\n";
-    }
-    ifstream databaseFileIn("libraryDatabase.txt");
+
+    InitialMenu();
+    cin >> action;
     LibraryDatabase Database;
-    while (AddingMoreBooks()) {
-        //Database.InsertValueDataBase(databaseFileOut);
-        Database.DeleteValueDataBase(databaseFileIn, "1jhfbpi");
-    } 
+    switch (action)
+    {
+        case 1: Database.InsertBookDataBase(); break;
+        case 2: Database.DeleteBookDataBase(); break;
+        case 3: break;
+        case 4: Database.PrintOneBookDataBase(); break;
+        case 5: Database.PrintValuesDataBase();  break;
+        default: break;
+    }
 }
 
 // ----------------------------------------
-bool AddingMoreBooks()
+void InitialMenu() 
 // ----------------------------------------
 {
-    bool result = false;
-    string moreBooks;
-        
-    cout << "Do you want to add some books (y/n)?";
-    cin >> moreBooks;
-    if (moreBooks == "y")   result = true;
-    else                    result = false;
-    return result;
+    cout << "Database Actions: \n";
+    cout << " 1 - Add Book \n";
+    cout << " 2 - Delete Book (given isbn)\n";
+    cout << " 3 - Update Book (given isbn) \n";
+    cout << " 4 - Print Book (given isbn) \n";
+    cout << " 5 - Print all the Books \n";
 }
+
 
 
