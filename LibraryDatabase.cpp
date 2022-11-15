@@ -22,7 +22,7 @@ namespace NSP_LibraryDatabase {
 		getline(cin, bookIsbn);
 		cout << " Write the Book Price: ";
 		cin >> bookPrice;
-		databaseFileOut << "\n bookName: " << bookName << "  |  bookAutor: " << bookAutor << "  |  bookEditorial: " << bookEditorial
+		databaseFileOut << "\n" <<"bookName: " << bookName << "  |  bookAutor: " << bookAutor << "  |  bookEditorial: " << bookEditorial
 			 << "  |  bookIsbn: " << bookIsbn << "  |  bookPrice: " << bookPrice;
 	}
 
@@ -39,7 +39,7 @@ namespace NSP_LibraryDatabase {
 		}
 		string row;
 		string isbnSearched;
-		cout << "insert the book ISBN to print: \n";
+		cout << "insert the book ISBN: \n";
 		cin >> isbnSearched;
 		while (getline(databaseFileIn, row))
 		{
@@ -58,17 +58,6 @@ namespace NSP_LibraryDatabase {
 	}
 
 	// ----------------------------------------
-	void LibraryDatabase::CreateAndFillFileOldValues()
-		// ----------------------------------------
-	{
-		ofstream databaseFile("libraryDatabase.txt", ios_base::out);
-		for (string row : fileCopied)
-		{
-			databaseFile << row << "dddd\n";
-		}
-
-	}
-
 	bool LibraryDatabase::IsIsbnFoundedInThisRow(string row, string isbnSearched)
 	// ----------------------------------------
 	{
@@ -80,7 +69,7 @@ namespace NSP_LibraryDatabase {
 
 	// ----------------------------------------
 	void LibraryDatabase::PrintOneBookDataBase()
-		// ----------------------------------------
+	// ----------------------------------------
 	{
 		ifstream databaseFileOut("libraryDatabase.txt");
 		if (!databaseFileOut)
@@ -99,6 +88,7 @@ namespace NSP_LibraryDatabase {
 			}
 		}
 	}
+
 	// ----------------------------------------
 	void LibraryDatabase::PrintValuesDataBase()
 	// ----------------------------------------
@@ -113,5 +103,13 @@ namespace NSP_LibraryDatabase {
 		{
 			cout << row << "\n";
 		}
+	}
+
+	// ----------------------------------------
+	void LibraryDatabase::UpdateBookDataBase()
+	// ----------------------------------------
+	{
+		DeleteBookDataBase();
+		InsertBookDataBase();
 	}
 }

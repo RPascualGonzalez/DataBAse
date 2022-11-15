@@ -11,7 +11,7 @@ namespace NSP_LibraryDatabase {
 		void DeleteBookDataBase();
 		void PrintValuesDataBase();
 		void PrintOneBookDataBase();
-		void CreateAndFillFileOldValues();
+		void UpdateBookDataBase();
 		
 	private:
 		bool IsIsbnFoundedInThisRow(std::string row, std::string isbnSearched);

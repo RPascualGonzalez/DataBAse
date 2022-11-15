@@ -10,33 +10,39 @@ using namespace NSP_LibraryDatabase;
 
 void InitialMenu();
 int action = 0;
+bool closeDB = false;
 int main()
 {
-
-    InitialMenu();
-    cin >> action;
-    LibraryDatabase Database;
-    switch (action)
+    while (not closeDB)
     {
+        InitialMenu();
+        cin >> action;
+        LibraryDatabase Database;
+        switch (action)
+        {
         case 1: Database.InsertBookDataBase(); break;
         case 2: Database.DeleteBookDataBase(); break;
-        case 3: break;
+        case 3: Database.UpdateBookDataBase(); break;
         case 4: Database.PrintOneBookDataBase(); break;
         case 5: Database.PrintValuesDataBase();  break;
+        case 6: closeDB = true;  break;
         default: break;
+        }
     }
+    
 }
 
 // ----------------------------------------
 void InitialMenu() 
 // ----------------------------------------
 {
-    cout << "Database Actions: \n";
+    cout << "\n \n Database Actions: \n";
     cout << " 1 - Add Book \n";
     cout << " 2 - Delete Book (given isbn)\n";
     cout << " 3 - Update Book (given isbn) \n";
     cout << " 4 - Print Book (given isbn) \n";
     cout << " 5 - Print all the Books \n";
+    cout << " 6 - Exit \n";
 }
 
 
